@@ -1,0 +1,61 @@
+<head>
+
+    <title>AgentNPM | Official docs</title>
+      <meta charset="UTF-8">
+      <meta name="description" content="Official docs">
+      <meta name="keywords" content="Official,original,docs,devs,AgentNPM">
+      <meta name="author" content="MrMask">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <script src="index.js"></script>  
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large"
+  onclick="w3_close()">Close &times;</button>
+  <button class="w3-bar-item w3-button" onclick="ThiefOpen()">Thief</button>
+  <button class="w3-bar-item w3-button" onclick="OpenOpen()">Client</button>
+  <button class="w3-bar-item w3-button" onclick="GuildOpen()">Guild</button>
+  <button class="w3-bar-item w3-button" onclick="ChannelOpen()">Channel</button>
+  <button class="w3-bar-item w3-button" onclick="MsgOpen()">Msg</button>
+  <a href="https://agentnpm.glitch.me"><button class="w3-bar-item w3-button TOhomepage" onclick="TOhomepage()">Back To Homepage</button>
+  </a>
+  
+</div>
+
+<div id="main">
+
+<div class="w3-teal">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Docs</h1>
+  </div>
+</div>
+
+<div class="w3-container">
+<p id="Content-itself">Example: <br> <img src="https://cdn.glitch.com/0c15e21c-4a6a-44bb-9bd5-bd491947b10d%2Fimage.png?1554386223923">
+</p>
+</div>
+
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+function ThiefOpen() {
+document.getElementById("Content-itself").value = "Theifing";
+}
+</script>
+
+</body>
