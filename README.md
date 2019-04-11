@@ -1,2 +1,0 @@
-# agentnpm
-AGENTNPM official site
