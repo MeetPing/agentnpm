@@ -15,14 +15,13 @@
 <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large"
   onclick="w3_close()">Close &times;</button>
+  <button class="w3-bar-item w3-button" onclick="document.location.reload()">Introduction</button>
   <button class="w3-bar-item w3-button" onclick="ThiefOpen()">Thief</button>
-  <button class="w3-bar-item w3-button" onclick="OpenOpen()">Client</button>
+  <button class="w3-bar-item w3-button" onclick="ClientOpen()">Client</button>
   <button class="w3-bar-item w3-button" onclick="GuildOpen()">Guild</button>
   <button class="w3-bar-item w3-button" onclick="ChannelOpen()">Channel</button>
   <button class="w3-bar-item w3-button" onclick="MsgOpen()">Msg</button>
-  <a href="https://www.npmjs.com/package/agentnpm"><button class="w3-bar-item w3-button TOhomepage">NPM</button></a>
-    
-  </a>
+ <a href="https://www.npmjs.com/package/agentnpm"><button class="w3-bar-item w3-button TOhomepage">NPM</button></a>
   
 </div>
 
@@ -30,19 +29,25 @@
 
 <div class="w3-teal">
   <button id="openNav" class="w3-button w3-teal w3-xlarge" onclick="w3_open()">&#9776;</button>
-  <div class="w3-container">
+  <div class="w3-container" id="w3-containerrs">
     <h1>Docs</h1>
   </div>
 </div>
 
 <div class="w3-container">
-<p id="Content-itself">Example: <br> <img src="https://cdn.glitch.com/0c15e21c-4a6a-44bb-9bd5-bd491947b10d%2Fimage.png?1554386223923">
+<p id="Content-itself">Example: 
+  <br><code style="display:block;white-space:pre-wrap">
+const agent = require('agentnpm');
+agent.NpmOn()
+agent.token(process.env.TOKEN)
+  </code>
 </p>
 </div>
 
 </div>
 
 <script>
+
 function w3_open() {
   document.getElementById("main").style.marginLeft = "25%";
   document.getElementById("mySidebar").style.width = "25%";
@@ -55,7 +60,30 @@ function w3_close() {
   document.getElementById("openNav").style.display = "inline-block";
 }
 function ThiefOpen() {
-document.getElementById("Content-itself").value = "Theifing";
+document.getElementById("Content-itself").innerHTML = thiefHtml;
+w3_close()
+  document.getElementById("w3-containerrs").innerHTML = "<h1>Thief</h1>";
+}//ClientOpen() GuildOpen() ChannelOpen() MsgOpen() // 
+  
+function ClientOpen() {
+document.getElementById("Content-itself").innerHTML = clientHtml;
+  document.getElementById("w3-containerrs").innerHTML = "<h1>Client</h1>";
+w3_close()
+}
+  function GuildOpen() {
+document.getElementById("Content-itself").innerHTML = guildHtml;
+    document.getElementById("w3-containerrs").innerHTML = "<h1>Guild</h1>";
+w3_close()
+}
+  function ChannelOpen() {
+document.getElementById("Content-itself").innerHTML = channelHtml;
+    document.getElementById("w3-containerrs").innerHTML = "<h1>Channel</h1>";
+w3_close()
+}
+  function MsgOpen() {
+document.getElementById("Content-itself").innerHTML = msgHtml;
+    document.getElementById("w3-containerrs").innerHTML = "<h1>Msg</h1>";
+w3_close()
 }
 </script>
 
